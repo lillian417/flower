@@ -1,0 +1,87 @@
+.all{
+    font-family: Microsoft JhengHei, "Times New Roman", Times, serif;
+}
+
+.ShoppingCarTitle{
+    padding-top: 100px;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.SelectallPart{
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 15px;
+    border: 3px solid gray;
+    border-bottom: 2px dashed gray;
+    padding-left: 37px;
+}
+
+.ForOneProduct{
+    padding: 15px;
+    border-left: 3px solid gray;
+    border-right: 3px solid gray;
+    font-size: 20px;
+    text-align: center;
+}
+.Product img{
+    width: 80%;
+    height: 123px;
+    object-fit: cover;
+    margin: auto;
+}
+.trash img{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.textbox{
+    width: 40%;
+    text-align: center;
+    margin-top: 46.5px;
+}
+input{
+    font-size: 16px;
+}
+.setinmiddle{
+    padding-top: 45px;
+}
+input.checkboxsize{
+    width: 18px;
+    height: 18px;
+}
+.ShoppingListBottom{
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    text-align: right;
+    border-top: 2px dashed gray;
+    border: 3px solid gray;
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+.Checkout{
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 30px;
+}
+.Checkoutplace{
+    margin-bottom: 100px;
+}
+
+/*購物車內無商品時*/
+.noProduct{
+    border: 3px solid gray;
+    border-radius: 10px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bolder;
+    color: rgb(161, 161, 161);
+}

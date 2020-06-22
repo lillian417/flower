@@ -1,0 +1,153 @@
+.all{
+    font-family: Microsoft JhengHei, "Times New Roman", Times, serif;
+}
+.status{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    margin-left: 60px;
+    margin-bottom: 60px;
+}
+.status img{
+    width: 50%;
+}
+.next img{
+    padding-top: 30px;
+}
+.OrderList{
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    height: 160px;
+    margin-bottom: 5px;
+}
+.OrderList img{
+    width: 80%;
+    height: 120px;
+    object-fit: cover;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+}
+.OrderListimg{
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.OrderListfont{
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    text-align: left;
+    padding-top: 20px;
+}
+.comment{
+    border: 2px solid gray;
+    cursor: pointer;
+    padding-top: 55px;
+    line-height: 25px;
+    background-color: rgb(139, 111, 165);
+    color: white;
+    font-weight: bold;
+}
+.comment_no{
+    border: 2px solid gray;
+    cursor: pointer;
+    padding-top: 55px;
+    line-height: 25px;
+}
+.allmoney{
+    text-align: right;
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-right: 90px;
+}
+.buyagain{
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 75px;
+    padding-top: 20px;
+    border-bottom: 2px dashed grey;
+    padding-bottom: 30px;
+}
+.buyagain span{
+    cursor: pointer;
+}
+.buyagain img{
+    width: 4%;
+}
+.information{
+    padding: 40px;
+    padding-left: 95px;
+    padding-right: 85px;
+    font-size: 20px; 
+    line-height: 35px;
+}
+.starPlace{
+    padding-top: 15px;
+    padding-left: 23px;
+}
+.commentPlace{
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+    margin-bottom: 25px;
+    display: none;
+    margin-top: -5px;
+}
+
+.commentbox{
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.commentOK{
+    margin-top: 55px;
+    text-align: center;
+}
+.back{
+    margin-top: 30px;
+    text-align: right;
+}
+.delectbtn{
+    font-family: Microsoft JhengHei, "Times New Roman", Times, serif;
+}
+
+
+/*星星部分*/
+.starPlace a {
+    color: #f1c40f;
+}
+
+.starPlace a:hover,
+.starPlace a:active,
+.starPlace a:focus {
+    color: #dab10d;
+}
+
+.rating-stars {
+    width: 100%;
+    text-align: center;
+}
+
+.rating-stars .rating-stars-container {
+    font-size: 0px;
+}
+
+.rating-stars .rating-stars-container .rating-star {
+    display: inline-block;
+    font-size: 32px;
+    color: #555555;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.rating-stars .rating-stars-container .rating-star.is--active,
+.rating-stars .rating-stars-container .rating-star.is--hover {
+    color: #f1c40f;
+}
+
+.rating-stars .rating-stars-container .rating-star.is--no-hover {
+    color: #555555;
+}

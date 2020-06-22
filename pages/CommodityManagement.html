@@ -1,0 +1,318 @@
+<!-- 後臺商品管理 -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="../assets/css/management.css">
+		<link href="../assets/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+		<link href="../assets/fileinput/themes/explorer-fas/theme.css" media="all" rel="stylesheet" type="text/css"/>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+		<script src="../assets/fileinput/js/plugins/piexif.js" type="text/javascript"></script>
+		<script src="../assets/fileinput/js/plugins/sortable.js" type="text/javascript"></script>
+		<script src="../assets/fileinput/js/fileinput.js" type="text/javascript"></script>
+		<script src="../assets/fileinput/js/locales/fr.js" type="text/javascript"></script>
+		<script src="../assets/fileinput/js/locales/es.js" type="text/javascript"></script>
+		<script src="../assets/fileinput/themes/fas/theme.js" type="text/javascript"></script>
+		<script src="../assets/fileinput/themes/explorer-fas/theme.js" type="text/javascript"></script>
+		<script>
+			// 前面勾選框判斷start
+			function initTableCheckbox() {
+				var $checkAll1 = $('#table tr td').html();
+				if ($checkAll1==null) {
+					var $thr = $('table thead tr');
+					var $checkAllTh = $('<td class="boo"><input type="checkbox" id="checkAll" name="checkAll" /></td>');
+					$thr.prepend($checkAllTh);
+					var $checkAll = $thr.find('input');
+					$checkAll.click(function(event){
+						$tbr.find('input').prop('checked',$(this).prop('checked'));
+						if ($(this).prop('checked')) {
+							$tbr.find('input').parent().parent().addClass('warning');
+							} else{
+							$tbr.find('input').parent().parent().removeClass('warning');
+							}
+						event.stopPropagation();
+					});
+					$checkAllTh.click(function(){
+						$(this).find('input').click();
+					});
+					var $tbr = $('table tbody tr');
+					var $checkItemTd = $('<td class="boo"><input type="checkbox" class="num" name="checkItem"/></td>');
+					$tbr.prepend($checkItemTd);
+					$tbr.find('input').click(function(event){
+							$(this).parent().parent().toggleClass('warning');
+						$checkAll.prop('checked',$tbr.find('input:checked').length == $tbr.length ? true : false);
+						event.stopPropagation();
+					});
+					$tbr.click(function(){
+						$(this).find('input').click();
+					});
+					var $btnpst=$('#after');
+					var $btn=$('<button type="button" class="btn btn-light" id="cancel" onclick="cancel()">取消</button><button id="delsure" class="btn btn-secondary" type="button" onclick="delsure()">確定刪除</button>');
+					$btnpst.prepend($btn);
+					$('#del').prop('disabled',true);
+					$('#add').prop('disabled',true);
+					$('.modify').prop('disabled',true);
+				}
+			}
+			initTableCheckbox();
+			// 勾選判斷end
+			function cancel(){
+					$('#del').prop('disabled',false);
+					$('#add').prop('disabled',false);
+					$('.modify').prop('disabled',false);
+					$('#delsure,#cancel').remove();
+					$('.boo').remove();
+			}
+			// 刪除方法start
+			function delsure(){
+				var Item = new Array();
+				var $result=$('input:checkbox:checked[name="checkItem"]');
+				$result.each(
+					function(i) {
+							Item[i] = $(this).parent().next().text();
+					}
+				);
+				if($result.length>0){
+					if(window.confirm('你確定要刪除嗎？')){
+						// 這邊塞入刪除指令
+						alert("已刪除所選商品")
+					}else{
+					}
+				}
+				else{
+					alert("沒有選取值");
+				}
+			}
+			// 刪除方法end
+			function add(){
+				document.getElementById("addpro").reset();
+			}
+					// 修改功能start
+		$(function(){
+			$(".modify").click(function() {
+				str = $(this).text()=="修改"?"确定":"修改";
+				$(this).text(str);
+				$(this).parent().siblings("td:eq(0)").each(function() {
+					obj_text = $(this).find("input:text");    // 判断单元格下是否有文本框
+					if(!obj_text.length)   // 如果没有文本框，则添加文本框使之可以编辑
+						$(this).html("<input type='text' value='"+$(this).text()+"'>");
+					else   // 如果已经存在文本框，则将其显示为文本框修改的值
+						$(this).html(obj_text.val());
+				});
+				$(this).parent().siblings("td:eq(1)").each(function() {
+					obj_file = $(this).find("input:file");
+					if(!obj_file.length)   // 如果没有文本框，则添加文本框使之可以编辑
+						$(this).html("<input type='file' value='"+$(this).val()+"'>");
+					else   // 如果已经存在文本框，则将其显示为文本框修改的值
+						$(this).html(obj_file.val());
+					});
+				$(this).parent().siblings("td:eq(2)").each(function() {
+					obj_text = $(this).find("input:text");    // 判断单元格下是否有文本框
+					if(!obj_text.length)   // 如果没有文本框，则添加文本框使之可以编辑
+						$(this).html("<input type='text' value='"+$(this).text()+"'>");
+					else   // 如果已经存在文本框，则将其显示为文本框修改的值
+						$(this).html(obj_text.val());
+				});
+				$(this).parent().siblings("td:eq(3)").each(function() {
+					obj_text = $(this).find("input:text");    // 判断单元格下是否有文本框
+					if(!obj_text.length)   // 如果没有文本框，则添加文本框使之可以编辑
+						$(this).html("<input type='text' value='"+$(this).text()+"'>");
+					else   // 如果已经存在文本框，则将其显示为文本框修改的值
+						$(this).html(obj_text.val());
+				});
+				$(this).parent().siblings("td:eq(4)").each(function() {
+					obj_text = $(this).find("input:text");    // 判断单元格下是否有文本框
+					if(!obj_text.length)   // 如果没有文本框，则添加文本框使之可以编辑
+						$(this).html("<input type='text' value='"+$(this).text()+"'>");
+					else   // 如果已经存在文本框，则将其显示为文本框修改的值
+						$(this).html(obj_text.val());
+				});
+				$(this).parent().siblings("td:eq(5)").each(function() {
+					obj_text = $(this).find("input:text");    // 判断单元格下是否有文本框
+					if(!obj_text.length)   // 如果没有文本框，则添加文本框使之可以编辑
+						$(this).html("<input type='text' value='"+$(this).text()+"'>");
+					else   // 如果已经存在文本框，则将其显示为文本框修改的值
+						$(this).html(obj_text.val());
+				});
+			});
+		});
+		// 修改功能end
+		</script>
+	</head>
+	<body class="container">
+		<!-- 上面選擇欄 start-->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar" style="background-color:lightgray;">
+			<a class="navbar-brand" href="index.html">
+				<!-- LOGO -->
+				紫盒子花禮設計
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="CommodityManagement.html">商品總覽</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="OrderManagement.html">訂單管理</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="MemberManagement.html">會員管理</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- 上面選擇欄end -->
+		<div class="text-right">
+			<a href="index.html" id="account">管理員帳號(登出)</a>
+		</div>
+		<div>
+			<p id="title">商品管理</p>
+			<form id="search"class="form-inline input-group-sm float-right">
+				<input class="form-control" type="text" placeholder="Search">
+				<div class="input-group-prepend">
+					<button class="btn btn-primary" type="submit"id="inputGroup-sizing-sm">Search</button>
+				</div>
+			</form>
+		</div>
+		<!-- 新增刪除button  -->
+		<div class="text-right">
+			<button type="button" id="add"  data-toggle="modal" data-target="#add1" class="btn btn-primary" onclick="add()">新增商品</button>
+			<button type="button" id="del" onclick="initTableCheckbox()"  class="btn btn-danger">刪除商品</button>
+		</div>
+		<!-- 新增頁面start -->
+		<div id="add1" class="modal inmodal fade " tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" >
+			<div class="modal-dialog modal-lg" >
+				<div class="modal-content">
+					<form id="addpro">
+						<div class="modal-header">
+							<h4 class="modal-title">新增產品</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							<!-- 新增表單 -->
+							<div class="form-group">
+								<label for="id" class="control-label">商品編號:</label>
+								<input type="text" class="form-control" id="id" disabled="">
+							</div>
+							<div class="form-group">
+								<label for="name" class="control-label">商品名稱:</label>
+								<input type="text" class="form-control" id="name" required>
+							</div>
+							<div class="form-group">
+								<label for="imgInp" class="control-label">
+									商品照片(最多三張):
+								</label>
+								<div class="file-loading">
+									<input id="input-b6" name="input-b6[]" type="file" class="form-control" multiple data-theme="fas">
+								</div>
+							</div>
+							<script>
+								$(document).ready(function() {
+									$("#input-b6").fileinput({
+									showUpload: false,
+									dropZoneEnabled: false,
+									maxFileCount: 3,
+									});
+								});
+							</script>
+							<div class="form-group">
+								<label for="price" class="control-label">商品價格:</label>
+								<input type="text" class="form-control" id="price">
+							</div>
+							<div class="form-group">
+								<label for="many" class="control-label">商品庫存:</label>
+								<input type="text" class="form-control" id="many">
+							</div>
+							<div class="form-group">
+								<label for="cate" class="control-label">商品分類:</label>
+								<select class="custom-select mr-sm-2" id="cate">
+									<option selected>Choose...</option>
+									<option value="1">花禮</option>
+									<option value="2">花材</option>
+									<option value="3">客製花禮</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="introduce" class="control-label">商品介紹:</label>
+								<textarea type="text" class="form-control" id="introduce"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							<input type="submit" value="確認新增">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 新增頁面end -->
+		<!-- 商品列表 -->
+		<div class='text-right' id="after"></div>
+		<div class="panel-group">
+			<div class="panel panel-primary">
+				<table id="prolist" class="table table-bordered table-hover" >
+					<thead id="table">
+						<tr class="success">
+							<th>商品編號</th>
+							<th>商品名稱</th>
+							<th>商品照片(最多三張)</th>
+							<th>商品價格</th>
+							<th>商品庫存</th>
+							<th>商品分類</th>
+							<th>商品介紹</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>322</th>
+							<td>name</td>
+							<td>Mark</td>
+							<td>333</td>
+							<td>@mdo</td>
+							<td>
+								<input class="status" name="product.status" value="1" type="hidden">
+								<div class="editText">花材</div>
+							</td>
+							<td>@mdo</td>
+							<th class="changefun"><button class="modify" href="javascript:;">修改</button></th>
+						</tr>
+						<tr>
+							<th>2</th>
+							<td>name</td>
+							<td>Jacob</td>
+							<td>333</td>
+							<td>eee</td>
+							<td>
+								<input class="status" name="product.status" value="1" type="hidden">
+								<div class="editText">花材</div></td>
+								<td>@mdo</td>
+								<th class="changefun"><button class="modify" href="javascript:;">修改</button></th>
+							</tr>
+							<tr>
+								<th>3</th>
+								<td>name</td>
+								<td>Larry the Bird</td>
+								<td>3</td>
+								<td>xxs</td>
+								<td>
+									<input class="status" name="product.status" value="1" type="hidden">
+									<div class="editText">花材</div></td>
+									<td>@mdo</td>
+									<th class="changefun"><button class="modify" href="javascript:;">修改</button></th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</body>
+		</html>

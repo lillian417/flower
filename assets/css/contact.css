@@ -1,0 +1,54 @@
+.jumbotron {
+	height:85vh;
+  	background: url("../images/contact-pic.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+} 
+.marketing .col-md-5 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing .col-md-5 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+.text-left{
+	font-size: 14px;
+	text-indent: 2em;
+}
+#a-1{
+	position: relative;
+	z-index: -100;
+	padding-top: 10rem;
+	padding-left: 5rem;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    color:rgba(239,239,239,1);
+    line-height: 70px;
+    font-size: 80px;
+}
+fieldset{
+    padding:.35em .625em .75em;
+    margin:0 2px;
+    border:1px solid silver;
+}
+legend{
+    padding:.5em;
+    border:0;
+    width:auto;
+}
+#contact{
+	margin-bottom: 5rem;
+}
+#contact input[type=submit],#contact input[type=reset]{
+	margin-left: 3rem;
+	width:30%;
+}
+iframe{
+  box-shadow:1px 1px 3px gray; 
+  border-radius: 7%;
+}
+.address{
+  font-style: italic;
+  text-decoration: underline;
+}

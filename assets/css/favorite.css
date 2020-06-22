@@ -1,0 +1,20 @@
+.breadcrumb{
+    position: absolute;
+    top:15vh;
+    padding-left: 40px;
+    left:-20px;
+    border-radius: 50px;
+    z-index: 2;
+    border:lightgray solid 2px;
+    background: rgba(255,255,255,.8);
+}
+#body{
+	padding-top: 4rem;
+}
+#content{
+	border:1px solid gray ;
+}
+.NavPlace{
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/all.css">
+    <link rel="stylesheet" href="../assets/css/ShoppingCar_1.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script>
+		$(window).scroll(function () {
+			if ($(".navbar").offset().top > 50) {
+				$(".navbar-fixed-top").addClass("top-nav");
+			}else {
+				$(".navbar-fixed-top").removeClass("top-nav");
+			}
+		})
+	</script>
+</head>
+<body>
+    <!-- 上面選擇欄start -->
+    <nav class="navbar navbar-expand-md navbar-fixed-top my-navbar main-nav ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                紫盒子花禮設計
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="nav navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">
+                            products
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="product.html">花禮</a>
+                            <a class="dropdown-item" href="product.html">花材</a>
+                            <a class="dropdown-item" href="product.html">客製花禮</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">contact us</a>
+                    </li>
+                </ul>
+                <ul id="nav-right" class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <!-- 登入換成使用者帳號 -->
+                            <!-- 登入 --><img src="../assets/images/login.png" class="icon" data-toggle="modal" data-target="#logstate">
+                            <!-- 登出<img src="../assets/images/logout.png" class="icon"> -->
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ShoppingCar_1.html"><img src="../assets/images/cart.png" class="icon"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorite.html"><img src="../assets/images/heart-w.png" class="icon"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 上面選擇欄end -->
+    <div class="container all">
+        <div class="row ShoppingCarTitle">購物明細</div>
+        <div class="row">
+            <!-- 如果購物車內有商品 -->
+            <form action="" method="post" id="past">
+                <div class="container">
+                    <div class="row SelectallPart">
+                        <div class="col-5"><input type="checkbox" name="selectall" class="checkboxsize allchoose" checked>&nbsp;全部選取</div>
+                        <div class="col-7"></div>
+                    </div>
+                    <div class="row ForOneProduct">
+                        <input type="hidden" name="productid" value="0001" class="productid">
+                        <div class="col-1 setinmiddle"><input type="checkbox" name="select" class="checkboxsize choose" checked></div>
+                        <div class="col-2 Product"><img src="../assets/images/product10_1.jpg"></div>
+                        <div class="col-3 setinmiddle productName">富貴吉祥新年盆禮</div>
+                        <div class="col-3"><input type="button" value="＜" class="leftarrow"><input type="text" name="amount" class="textbox" value="1"><input type="button" value="＞" class="rightarrow"></div>
+                        <div class="col-1 trash setinmiddle"><img src="../assets/images/trash.svg"></div>
+                        <div class="col-2 setinmiddle">單價：&nbsp;＄123&nbsp; 元 </div>
+                    </div>
+                    <div class="row ForOneProduct">
+                        <input type="hidden" name="productid" value="0002" class="productid">
+                        <div class="col-1 setinmiddle"><input type="checkbox" name="select" class="checkboxsize choose" checked></div>
+                        <div class="col-2 Product"><img src="../assets/images/重瓣紫孔雀菊.jpg"></div>
+                        <div class="col-3 setinmiddle productName">重瓣紫孔雀菊</div>
+                        <div class="col-3"><input type="button" value="＜" class="leftarrow"><input type="text" name="amount" class="textbox" value="3"><input type="button" value="＞" class="rightarrow"></div>
+                        <div class="col-1 trash setinmiddle"><img src="../assets/images/trash.svg"></div>
+                        <div class="col-2 setinmiddle">單價：&nbsp;＄123&nbsp; 元 </div>
+                    </div>
+                    <div class="row ForOneProduct">
+                        <input type="hidden" name="productid" value="0003" class="productid">
+                        <div class="col-1 setinmiddle"><input type="checkbox" name="select" class="checkboxsize choose" checked></div>
+                        <div class="col-2 Product"><img src="../assets/images/product9_1.jpg"></div>
+                        <div class="col-3 setinmiddle productName">情人節浪漫精緻花禮(五角立體)</div>
+                        <div class="col-3"><input type="button" value="＜" class="leftarrow"><input type="text" name="amount" class="textbox" value="5"><input type="button" value="＞" class="rightarrow"></div>
+                        <div class="col-1 trash setinmiddle"><img src="../assets/images/trash.svg"></div>
+                        <div class="col-2 setinmiddle">單價：&nbsp;＄123&nbsp; 元 </div>
+                    </div>
+                    <div class="row ShoppingListBottom">
+                        <div class="col-12">訂單金額共&nbsp;＄1234&nbsp;元</div>
+                    </div>
+                    <div class="row Checkoutplace">
+                        <div class="col-12"><input type="submit" value="結帳" class="Checkout ReadytoPay"></div>
+                    </div>
+                </div>
+            </form>
+            <!-- 如果購物車內沒有商品 -->
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col-12 noProduct">購物車內是空的！</div>
+                </div>
+                <div class="row Checkoutplace">
+                    <div class="col-12"><input type="submit" value="點我購物去！" class="Checkout SeeAnother" onclick="location.href='product.html'"></div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+<script src="../assets/js/ShoppingCar.js"></script>
+</html>

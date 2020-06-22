@@ -1,0 +1,96 @@
+.OrderListHead{
+    text-align: center;
+    margin-top: 10px !important;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    color: white;
+    background-color: rgb(109, 59, 175);
+}
+.OrderListHeadword{
+    font-size: 1.2rem;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.OrderLists{
+    text-align: center;
+    font-family: Microsoft JhengHei, "Times New Roman", Times, serif;
+    font-size: 1.1rem;
+}
+.OrderListforOne{
+    margin-top: 5px;
+    line-height: 90px;
+    border: 3px solid gray;
+    background-color: rgb(213, 208, 228);
+    border-radius: 10px;
+}
+.OrderListforOne img{
+    width: 60%;
+    height: 90px;
+    object-fit: cover;
+    padding: 10px;
+    margin: auto;
+}
+.OrderListforOneBottom{
+    line-height: 20pt;
+    border-top: 2px dashed gray;
+    border-bottom: 2px solid gray;
+    padding-top: 20px;
+}
+.OrderListforOneBottomLeft{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.OrderListforOneBottomRight{
+    text-align: right;
+}
+.OrderListforOneBottomRight_1{
+    padding-bottom: 25px;
+    color: red;
+    font-size: 16pt;
+    font-weight: bolder;
+    position:absolute;
+    right:30px;
+}
+.OrderListforOneBottomRight_2{
+    font-size: 1rem;
+    height: auto;
+    font-weight: bold;
+    padding-bottom: 15px;
+    position:absolute;
+    bottom:0px;
+    right:30px;
+}
+.OrderListforOneBottomRight_2 input{
+    margin-left: 5px;
+}
+.OrderListforOneBottomRight_2 span{
+    font-size: 1.3rem;
+}
+.arrow img{
+    width: 2.5%;
+    height: 2.5%;
+    margin: auto;
+    padding: 5px;
+}
+.reverted img{
+    -moz-transform:scaleY(-1);
+    -webkit-transform:scaleY(-1);
+    -o-transform:scaleY(-1);
+    transform:scaleY(-1);
+}
+.changingControl{
+    height: 119px;
+    overflow: hidden;
+}
+.OrderListBottom{
+    margin-left: 42%;
+    font-family: Microsoft JhengHei;
+    font-size: 1.4rem;
+    color: gray;
+    font-weight: bold;
+    line-height: 50px;
+    margin-top:30px;
+    margin-bottom:30px;
+}

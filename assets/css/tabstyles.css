@@ -1,0 +1,78 @@
+#list a {
+	color: #2CC185;
+	text-decoration: none;
+	outline: none;
+}
+#list .tabs {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
+	font-weight: 300;
+	font-size: 1.25em;
+}
+#list .tabs nav ul {
+	position: relative;
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1200px;
+	list-style: none;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+#list .tabs nav ul li {
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0;
+	text-align: center;
+	flex: 1;
+}
+#list .tabs nav a {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 2.5;
+}
+#list .content-wrap section {
+	display: none;
+	margin: 0 auto;
+	padding: 1em;
+	max-width: 1200px;
+	text-align: center;
+}
+#list .content-wrap section.content-current {
+	display: block;
+}
+#list .tabs-style-topline nav li {
+	border: 1px solid rgba(40,44,42,0.1);
+}
+#list .tabs-style-topline nav li:not(:last-child) {
+	border-right: none;
+}
+#list .tabs-style-topline nav a {
+	padding: 0.65em 0 0.5em;
+	background: rgba(40,44,42,0.05);
+	color: #74777b;
+	line-height: 1;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+#list .tabs-style-topline nav a:hover,
+#list .tabs-style-topline nav a:focus {
+	color: #2CC185;
+}
+#list .tabs-style-topline nav li.tab-current a {
+	background: none;
+	box-shadow: inset 0 3px 0 #2CC185;
+	color: #2CC185;
+}
+#list .tabs-style-topline nav a span {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	font-size: 0.5em;
+}

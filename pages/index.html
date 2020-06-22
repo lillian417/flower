@@ -1,0 +1,237 @@
+<!-- 首頁 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="../assets/css/index.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/all.css">
+	</head>
+	<script>
+		$(window).scroll(function () {
+			if ($(".navbar").offset().top > 50) {
+				$(".navbar-fixed-top").addClass("top-nav");
+			}else {
+				$(".navbar-fixed-top").removeClass("top-nav");
+			}
+		})
+		$(".carousel-inner >.carousel-item").css("height",$(".carousel-inner >.carousel-item> img").height());
+	</script>
+	<body>
+		<!-- 上面選擇欄 -->
+		<nav class="navbar navbar-expand-md navbar-fixed-top my-navbar main-nav ">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					紫盒子花禮設計
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="nav navbar-nav mx-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">
+								products
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="product.html">花禮</a>
+								<a class="dropdown-item" href="product.html">花材</a>
+								<a class="dropdown-item" href="product.html">客製花禮</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">contact us</a>
+						</li>
+					</ul>
+					<ul id="nav-right" class="nav navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<!-- 登入換成使用者帳號 -->
+								<!-- 登入 --><img src="../assets/images/login.png" class="icon" data-toggle="modal" data-target="#logstate">
+								<!-- 登出<img src="../assets/images/logout.png" class="icon"> -->
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="ShoppingCar_1.html"><img src="../assets/images/cart.png" class="icon"></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="favorite.html"><img src="../assets/images/heart-w.png" class="icon"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- 上面選擇欄end -->
+		<!-- 登入頁面 -->
+		<div class="modal fade" id="logstate" tabindex="-1" role="dialog"  aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<ul class="nav nav-tabs" role="tablist">
+							<li id="signin-link">
+								<a href="#signin-tab" class="active" role="tab" data-toggle="tab">登入</a>
+							</li>
+							<li id="signup-link">
+								<a href="#signup-tab" role="tab" data-toggle="tab">註冊</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="signin-signup-tab">
+							<div class="tab-pane " id="signup-tab">
+								<form action="" class="form col-md-12 center-block">
+									<div class="form-group">
+										<input type="text" class="form-control" name="id" placeholder="帳號">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" name="pw"  placeholder="密碼">
+									</div>
+									<div class="form-group">
+										<input type="prepassword" class="form-control" name="pw"  placeholder="密碼確認">
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="name"  placeholder="姓名">
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="mail"  placeholder="電子郵件">
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="tel"  placeholder="連絡電話">
+									</div>
+									<div class="form-group">
+										<input type="submit" href="#" class="btn btn-primary  btn-block" value="立刻註冊">
+									</div>
+								</form>
+							</div>
+							<div class="tab-pane active" id="signin-tab">
+								<form action="" class="form col-md-12 center-block">
+									<div class="form-group">
+										<input type="text" class="form-control" id="id" placeholder="帳號" >
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" id="pw" placeholder="密碼">
+									</div>
+									<div class="form-group">
+										<input type="submit" href="#" class="btn btn-primary  btn-block" value="立刻登入">
+									</div>
+									<span>
+										<a href="#">忘記密碼?</a>
+									</span>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 登入頁面END -->
+		<!-- 跑馬燈 -->
+		<div class="carousel slide" data-ride="carousel" id="carousel-demo">
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-demo" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-demo" data-slide-to="1"></li>
+				<li data-target="#carousel-demo" data-slide-to="2"></li>
+				<li data-target="#carousel-demo" data-slide-to="3"></li>
+				<li data-target="#carousel-demo" data-slide-to="4"></li>
+			</ol>
+			<div class="carousel-caption">
+				<div >
+					<form class="form-search form-inline">
+						<input type="text" class="search-query" placeholder="找點什麼?" />
+					</form>
+				</div>
+				<h4>Maybe there are five thousand roses in the world and you the same flower, </h4><h2>“but only you are my unique rose.”</h2>
+				<a class="btn btn-lg btn-dark" href="product.html" role="button">開始探索</a>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="https://images.pexels.com/photos/1410226/pexels-photo-1410226.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="https://images.pexels.com/photos/542517/pexels-photo-542517.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="https://images.pexels.com/photos/545042/pexels-photo-545042.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="https://images.pexels.com/photos/617967/pexels-photo-617967.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="https://images.pexels.com/photos/169191/pexels-photo-169191.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+				</div>
+				
+				<a href="#carousel-demo" class="carousel-control-prev" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a href="#carousel-demo" class="carousel-control-next" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>
+			</div>
+		</div>
+		<!-- 跑馬燈end -->
+
+
+
+		<!-- !!!!!!!!!!!!!!!!!!!!!以下有做修改 !!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
+
+
+
+		<!-- 種類介紹 -->
+		<div id="intro"class="container marketing mt-5 mb-5">
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading">花禮.<span class="text-muted">Instant Of Eternity.</span></h2>
+					<p class="lead mt-4 col-md-9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本店提供您最詳盡的各式花禮搭配，各式顏色、種類應有盡有。從情侶間的送花到畢業花禮、婚宴花禮皆有提供，點此可到花禮商品頁。<br><a class="btn btn-lg btn-secondary mt-3" href="product.html" role="button">更多花禮 &raquo;</a></p>
+				</div>
+				<div class="col-md-5" id="t-1">
+					<svg width="400" height="400"></svg>
+				</div>
+			</div>
+			<hr class="featurette-divider">
+			<div class="row featurette">
+				<div class="col-md-7 order-md-2">
+					<h2 class="featurette-heading">花材.<span class="text-muted">Every flower blooms in its own time.</span></h2>
+					<p class="lead col-md-9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提供您各式花材樣式，本店會先幫您處理好花材狀況，您只需下單即可。<br><a class="btn btn-lg btn-secondary mt-3" href="product.html" role="button">更多花材 &raquo;</a></p>
+				</div>
+				<div class="col-md-5 order-md-1"id="t-2">
+					<svg width="400" height="400"></svg>
+				</div>
+			</div>
+			<hr class="featurette-divider">
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading">客製花禮.<span class="text-muted">Unique Beauty For You.</span></h2>
+					<p class="lead col-md-9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;若您需要客製化的花禮搭配，請您先去花材區選購我們的花材，並於結帳頁面備註用途、特殊需求等，也可於contact us直接與我們聯繫，本店將盡速與您聯絡。<br><a class="btn btn-lg btn-secondary mt-3" href="product.html" role="button">挑選花材 &raquo;</a></p>
+				</div>
+				<div class="col-md-5" id="t-3">
+					<svg width="400" height="400"></svg>
+				</div>
+			</div>
+		</div>
+<!-- 種類介紹end-->
+<!-- 		<div id="body">
+			<div id="b-2">
+				最新上架
+			</div>
+			<div id="b-3">
+				<div id="newPro">
+					<div id="l-1">
+						<div id="l-1-1">cc</div>
+						<div id="l-1-2">ddw</div>
+						<div id="l-3">fff</div>
+						<div id="l-2-1">cc</div>
+						<div id="l-2-2">ddss</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<footer>Copyright@2020 flower shop</footer>
+	</body>
+</html>

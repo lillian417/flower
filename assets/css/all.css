@@ -1,0 +1,89 @@
+html, body {
+	width:100%;
+	height:100%;
+	font-family:'Calibri',"微軟正黑體";
+}
+/*header*/
+.my-navbar {
+	width: 100%;
+	position:fixed;
+	z-index: 100;
+	padding:10px 0;
+	background: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0));
+	transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}  
+#navbarNavDropdown>ul>li>a{
+	transition: color 0.3s ease-in-out;
+	color:white;
+}  
+.my-navbar .active a{
+	font-weight: bold;
+	text-shadow: 1px 2px 5px #1F4055;
+}  
+#navbarNavDropdown>ul>li>a:hover {
+	color:#45bcf9;
+}
+.top-nav {
+	padding:0;
+	background:black;
+}  
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+#nav-right{
+	margin-right:2%;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+#logstate ul .active {
+    background:rgba(114, 116, 140, 0.9);
+	color:white;
+	font-weight: bold;
+}
+/*登入/註冊*/
+#logstate .tab-content{
+	margin-top: 30px;
+	padding: 10px;
+}
+.modal-dialog,.modal-content,.modal-body{
+	border: none;
+}
+#logstate .modal-body{
+	border: none;
+	padding:10px;
+}
+.nav-tabs li a{
+	border-radius: 5px 5px 0 0;
+ 	text-align: center;
+ 	border-bottom: 0;
+ 	margin-left: 3px;
+    padding: 10px 100px;
+    background:lightgray;
+    color:gray;
+    transition: all 0.3s ease-in 0s;
+}
+#logstate ul .active {
+    background:rgba(114, 116, 140, 0.9);
+	color:white;
+	font-weight: bold;
+}
+/*商標*/
+.navbar-brand{
+	font-size:20px;
+	/* font-weight: bold; */
+	color: white;
+}
+/*FOOTER*/
+footer{
+	width:100%;
+	float: left;
+	padding:1vh;
+	color: lightgray;
+	text-align: center;
+	background: black;
+}

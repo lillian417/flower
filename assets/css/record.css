@@ -1,0 +1,83 @@
+.breadcrumb{
+    position: absolute;
+    top:15vh;
+    padding-left: 40px;
+    left:-20px;
+    border-radius: 50px;
+    z-index: 2;
+    border:lightgray solid 2px;
+    background: rgba(255,255,255,.8);
+}
+#body{
+	padding-top: 4rem;
+}
+#content{
+	border:1px solid gray ;
+}
+
+.ForOneOrder{
+    margin-top: 30px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-family: Microsoft JhengHei, "Times New Roman", Times, serif;
+    background-color:  rgb(245, 239, 245);
+}
+
+.OrderStatus{
+    padding: 5px;
+    padding-left: 25px;
+    border-bottom: 2px solid grey;
+    color: rgb(102, 35, 189);
+    font-weight: bolder;
+    background-color: rgb(224, 199, 224);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 18px;
+}
+.ForOneOrderInformation{
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.ForOneOrder img{
+    width: 98%;
+    height: 145px;
+    object-fit: cover;
+    padding: 10px;
+    margin: auto;
+}
+.BuyAgain{
+    text-align: right;
+}
+.BuyAgain span{
+    cursor: pointer;
+    position:absolute;
+    bottom:10px;
+    right:30px;
+}
+.BuyAgain img{
+    width: 30%;
+    height: 30%;
+}
+.Showmoney{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    border-top: 2px dashed grey;
+    border-bottom: 2px solid grey;
+    color: red;
+}
+.GotoOneOrder{
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    color: rgb(89, 61, 134);
+}
+.GotoOneOrder:hover{
+    background-color: rgb(145, 100, 163);
+    color: white;
+    font-weight: bold;
+}

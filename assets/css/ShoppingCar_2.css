@@ -1,0 +1,88 @@
+.all{
+    font-family: Microsoft JhengHei, "Times New Roman", Times, serif;
+}
+
+.ShoppingCarTitle{
+    padding-top: 100px;
+    font-size: 28px;
+    font-weight: bolder;
+}
+.ProductList{
+    border-top: 3px solid gray;
+    margin-top: 30px;
+}
+.ProductList img{
+    width: 50%;
+    height: 123px;
+    object-fit: cover;
+    margin: auto;
+}
+.ForOneProduct{
+    padding: 15px;
+    font-size: 20px;
+    line-height: 123px;
+    text-align: center;
+    border-right: 3px solid gray;
+    border-left: 3px solid gray;
+}
+.ShoppingListBottom{
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    text-align: right;
+    border-right: 3px solid gray;
+    border-left: 3px solid gray;
+    border-top: 2px dashed gray;
+    border-bottom: 2px dashed gray;
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+.ShoppingInformation{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 60px;
+    padding: 20px;
+    padding-left: 35px;
+}
+.buttonPlace{
+    padding: 5px;
+    margin: 0px;
+}
+.Informationbutton{
+    width: 85%;
+    font-size: 18px;
+    padding: 2px;
+}
+.Adjustment{
+    border-bottom: 3px solid grey;
+    border-right: 3px solid gray;
+    border-left: 3px solid gray;
+}
+
+
+[type=text]{
+    font-weight: normal;
+    height: 30px;
+    width: 70%;
+}
+.textpa{
+    padding-top: 50px;
+    line-height: 20px;
+}
+
+
+
+
+
+
+.Checkout{
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 30px;
+}
+.Checkoutplace{
+    margin-bottom: 100px;
+}

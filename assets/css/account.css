@@ -1,0 +1,30 @@
+.breadcrumb{
+    position: absolute;
+    top:15vh;
+    padding-left: 40px;
+    left:-20px;
+    border-radius: 50px;
+    z-index: 2;
+    border:lightgray solid 2px;
+    background: rgba(255,255,255,.8);
+}
+#body{
+	padding-top: 4rem;
+}
+#content{
+	border:1px solid gray ;
+}
+#change{
+    background:url(../images/pencil.svg) no-repeat center center;
+    width:15px;
+    background-size: contain;
+    height:15px;
+    border:none;
+}
+.text-center p{
+    line-height: 62px;
+}
+
+input{
+    line-height: 25px;
+}
